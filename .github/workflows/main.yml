@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    name: Test Policy Validator
+    steps:
+      - name: Policy validator
+        id: test
+        uses: StephenKing/terraform-iam-policy-validator-action@v1
+        with:
+          path: 'test/tfplan'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"

@@ -1,0 +1,21 @@
+name: 'Terraform IAM Policy Validator'
+description: 'Validates IAM policies out of a Terraform plan against IAM Access Analyzer'
+inputs:
+  template-path:
+    default: 'tfplan.json'
+    description: Path to Terraform plan file as JSON
+  region:
+    default: 'us-east-1'
+    description: AWS region
+outputs:
+  result:
+    description: 'Evaluation result of IAM Access Analyzer'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - '--template-path'
+    - ${{ inputs.template-path }}
+    - '--region'
+    - ${{ inputs.region }}
+    - '--enable-logging'
