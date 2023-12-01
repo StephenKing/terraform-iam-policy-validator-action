@@ -13,7 +13,7 @@ jobs:
         # uses: StephenKing/terraform-iam-policy-validator-action@v1
         uses: ./
         with:
-          path: 'test/tfplan'
+          template-path: 'test/tfplan.json'
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
