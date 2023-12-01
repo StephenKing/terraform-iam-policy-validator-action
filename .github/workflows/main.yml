@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Policy Validator
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Policy validator
         id: test
         # uses: StephenKing/terraform-iam-policy-validator-action@v1
