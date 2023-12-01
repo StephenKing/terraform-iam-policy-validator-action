@@ -5,5 +5,5 @@ WORKDIR /action/workspace
 
 RUN python3 -m pip install --no-cache-dir tf-policy-validator
 
-ENTRYPOINT ["tf-policy-validator"]
-#, "validate", "validate", "--template-path"]
+ENTRYPOINT ["tf-policy-validator", "validate", "--enable-logging", "--template-path", "$INPUT_TEMPLATE-PATH", "--region", "$INPUT_REGION"]
+

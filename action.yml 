@@ -14,8 +14,9 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - 'validate'
+    - '--enable-logging'
     - '--template-path'
     - ${{ inputs.template-path }}
     - '--region'
     - ${{ inputs.region }}
-    - '--enable-logging'
