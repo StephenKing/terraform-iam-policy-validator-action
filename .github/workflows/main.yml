@@ -7,7 +7,8 @@ jobs:
     steps:
       - name: Policy validator
         id: test
-        uses: StephenKing/terraform-iam-policy-validator-action
+        # uses: StephenKing/terraform-iam-policy-validator-action@v1
+        uses: ./
         with:
           path: 'test/tfplan'
       # Use the output from the `hello` step
